@@ -1,0 +1,15 @@
+{
+  "default": {
+    "import": [
+      "tests/step_definitions/**/*.ts"
+    ],
+    "format": [
+      "summary",
+      "progress-bar",
+      "json:reports/cucumber-report.json"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    }
+  }
+}

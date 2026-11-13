@@ -1,0 +1,58 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "OSPC: BAT UI Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["run-test.js", "tests/features/OSPC.feature", "--tags", "@DirectDeposit"],
+      "env": {
+        "TEST_ENV": "BAT",
+        "HEADLESS": "false"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "OSPC: SIT2 UI Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["run-test.js", "tests/features/OSPC.feature", "--tags", "@OSPCUI"],
+      "env": {
+        "TEST_ENV": "SIT2",
+        "HEADLESS": "false"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Worker Travel: PPD",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["run-test.js", "tests/features/WorkerTravel.feature"],
+      "env": {
+        "TEST_ENV": "PPD",
+        "HEADLESS": "false"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Run Current Open Feature File",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["run-test.js", "${relativeFile}"],
+      "env": {
+        "TEST_ENV": "BAT",
+        "HEADLESS": "false"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}

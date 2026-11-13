@@ -1,0 +1,101 @@
+import { Page, Locator, expect } from '@playwright/test';
+import { BasePage } from '../../utils/BasePage';
+
+export class DIeForm7_InjuryIllnessDetails extends BasePage {
+    private readonly ModalPopup: Locator;
+    private readonly DistributionPopUpNo: Locator;
+    private readonly NextButton: Locator;
+    private readonly InjuryDetailsHeading: Locator;
+    private readonly WhatHappenedInput: Locator;
+    private readonly dateContainerW: Locator;
+    private readonly selectBodypartsW: Locator;
+    private readonly addBodyPartsBtn: Locator;
+    private readonly save: Locator;
+    private readonly ReportingDetailsHeader: Locator;
+    private readonly ReportingContactHeader: Locator;
+    private readonly AddContactButton: Locator;
+    private readonly myCardContact: Locator;
+    private readonly ContactfirstName: Locator;
+    private readonly ContactlastName: Locator;
+    private readonly ContactLanguage: Locator;
+    private readonly ContactphoneNumber: Locator;
+    private readonly ContactSaveButton: Locator;
+    private readonly WitnessInformationHeading: Locator;
+    private readonly InjuryIncidentLocationHeading: Locator;
+    private readonly copyAddressButton: Locator;
+    private readonly PriorConditionHeader: Locator;
+    private readonly ThirdPartyHeader: Locator;
+    private readonly ObjectionHeader: Locator;
+
+    constructor(page: Page) {
+        super(page);
+        this.ModalPopup = this.page.locator('xpath=//*[@id="myModal" and @class="modal show"]');
+        this.DistributionPopUpNo = this.page.locator('xpath=//*[@class="DistributionPopUpButton2"]');
+        this.NextButton = this.page.locator('xpath=//*[contains(@class,"rightImgIcon")]');
+        this.InjuryDetailsHeading = this.page.locator('#injuryDetailsOneTime');
+        this.WhatHappenedInput = this.page.locator('#injuryDetailsInput');
+        this.dateContainerW = this.page.locator('#dateContainer');
+        this.selectBodypartsW = this.page.locator('#selectBodyparts');
+        this.addBodyPartsBtn = this.page.locator('#addBodyPartsBtn');
+        this.save = this.page.locator('#save');
+        this.ReportingDetailsHeader = this.page.locator('xpath=//h1[contains(text(),"Injury or illness reporting details")]');
+        this.ReportingContactHeader = this.page.locator('xpath=//h1[contains(text(),"Injury or illness reporting details")]');
+        this.AddContactButton = this.page.locator('#addSupervisorDetails');
+        this.myCardContact = this.page.locator('#myCard');
+        this.ContactfirstName = this.page.locator('#firstName');
+        this.ContactlastName = this.page.locator('#lastName');
+        this.ContactLanguage = this.page.locator('#LanguageofService-wrapper');
+        this.ContactphoneNumber = this.page.locator('#workNumber');
+        this.ContactSaveButton = this.page.locator('#saveSupervisorDetails');
+        this.WitnessInformationHeading = this.page.locator('#witnessInformation');
+        this.InjuryIncidentLocationHeading = this.page.locator('#InjuryIncidentLocation');
+        this.copyAddressButton = this.page.locator('#copyAddressButton');
+        this.PriorConditionHeader = this.page.locator('xpath=//h1[contains(text(),"prior related condition")]');
+        this.ThirdPartyHeader = this.page.locator('xpath=//h1[contains(text(),"third party")]');
+        this.ObjectionHeader = this.page.locator('xpath=//h1[contains(text(),"objection")]');
+    }
+
+    async selectInjuryIllnessDetails(whatHappenedInput: string, injuryDate: string, bodyParts: string, employerKnownDate: string, reportedTo: string, witness: string, priorConditions: string, thirdParty: string, objection: string): Promise<boolean> {
+        await this.InjuryDetailsHeading.waitFor({ state: 'visible' });
+        await this.enter(this.WhatHappenedInput, whatHappenedInput);
+        await this.click(this.NextButton);
+        await this.dateContainerW.waitFor({ state: 'visible' });
+        await this.datePicker('injuryDatePicker', injuryDate);
+        await this.click(this.NextButton);
+        await this.selectBodypartsW.waitFor({ state: 'visible' });
+        await this.click(this.addBodyPartsBtn);
+        await this.page.locator(`label:has-text("${bodyParts}")`).click();
+        await this.click(this.save);
+        await this.sleep(2000);
+        await this.click(this.NextButton);
+        await this.ReportingDetailsHeader.waitFor({ state: 'visible' });
+        await this.datePicker('injuryDatePicker', employerKnownDate);
+        await this.click(this.NextButton);
+        await this.ReportingContactHeader.waitFor({ state: 'visible' });
+        await this.click(this.AddContactButton);
+        await this.myCardContact.waitFor({ state: 'visible' });
+        const reportedToParts = reportedTo.split('|');
+        await this.enter(this.ContactfirstName, reportedToParts[0]);
+        await this.enter(this.ContactlastName, reportedToParts[1]);
+        await this.selectJutroDropdownOption('LanguageofService', reportedToParts[3]);
+        await this.enter(this.ContactphoneNumber, reportedToParts[2]);
+        await this.click(this.ContactSaveButton);
+        await this.click(this.NextButton);
+        await this.WitnessInformationHeading.waitFor({ state: 'visible' });
+        await this.page.locator(`label:has-text("${witness}")`).click();
+        await this.click(this.NextButton);
+        await this.InjuryIncidentLocationHeading.waitFor({ state: 'visible' });
+        await this.click(this.copyAddressButton);
+        await this.click(this.NextButton);
+        await this.PriorConditionHeader.waitFor({ state: 'visible' });
+        await this.page.locator(`label:has-text("${priorConditions}")`).click();
+        await this.click(this.NextButton);
+        await this.ThirdPartyHeader.waitFor({ state: 'visible' });
+        await this.page.locator(`label:has-text("${thirdParty}")`).click();
+        await this.click(this.NextButton);
+        await this.ObjectionHeader.waitFor({ state: 'visible' });
+        await this.page.locator(`label:has-text("${objection}")`).click();
+        await this.click(this.NextButton);
+        return true;
+    }
+}

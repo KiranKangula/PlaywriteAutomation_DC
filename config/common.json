@@ -1,0 +1,11 @@
+{
+  "timeout": 10,
+  "screenshots": false,
+  "externalValidation": true,
+  "network": {
+    "captureEnabled": true,
+    "failOnUiError": true,
+    "responseBody": true,
+    "maxResponseBytes": 1048576
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "digital-claims-playwright",
+  "version": "1.0.0",
+  "description": "Migrated Playwright TS Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "node run-test.js tests/features/**/*.feature",
+    "test:headless": "cross-env HEADLESS=true node run-test.js tests/features/**/*.feature",
+    "test:worker": "cross-env TEST_ENV=PPD node run-test.js tests/features/WorkerTravel.feature",
+    "test:worker:edge": "cross-env TEST_ENV=PPD BROWSER=edge node run-test.js tests/features/WorkerTravel.feature",
+    "test:worker:firefox": "cross-env TEST_ENV=PPD BROWSER=firefox node run-test.js tests/features/WorkerTravel.feature",
+    "test:nihl": "cross-env TEST_ENV=PPD node run-test.js tests/features/NIHL.feature",
+    "test:caa": "cross-env TEST_ENV=PPD node run-test.js tests/features/ClothingAllowance.feature",
+    "test:uncd": "cross-env TEST_ENV=PPD node run-test.js tests/features/UNCD.feature",
+    "test:ospc:sit2": "cross-env TEST_ENV=SIT2 node run-test.js tests/features/OSPC.feature",
+    "test:ospc:bat": "cross-env TEST_ENV=BAT node run-test.js tests/features/OSPC.feature",
+    "test:ospc:ite1": "cross-env TEST_ENV=ITE1 node run-test.js tests/features/OSPC.feature",
+    "test:ospc:ite2": "cross-env TEST_ENV=ITE2 node run-test.js tests/features/OSPC.feature",
+    "test:ospc:ppd": "cross-env TEST_ENV=PPD node run-test.js tests/features/OSPC.feature",
+    "test:osbc:sit2": "cross-env TEST_ENV=SIT2 node run-test.js tests/features/OSBC.feature",
+    "test:osbc:bat": "cross-env TEST_ENV=BAT node run-test.js tests/features/OSBC.feature",
+    "test:gwcc:sit2": "cross-env TEST_ENV=SIT2 node run-test.js tests/features/GWClaimCenter.feature",
+    "test:gwcc:ppd": "cross-env TEST_ENV=PPD node run-test.js tests/features/GWClaimCenter.feature",
+    "report": "tsx utils/GenerateReport.ts"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.0.0",
+    "fast-xml-parser": "^5.11.2",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "axe-core": "^4.14.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^18.0.9",
+    "tsx": "^4.23.15"
+  }
+}

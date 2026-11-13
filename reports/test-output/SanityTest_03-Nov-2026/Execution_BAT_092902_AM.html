@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Execution Report - BAT</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+</head>
+<body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+      <!-- HEADER NAVBAR -->
+      <div class="header navbar">
+        <div class="vheader">
+          <div class="nav-logo">
+            <a href="#">
+              <div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+            </a>
+          </div>
+          <ul class="nav-left">
+            <li class="search-box">
+              <a class="search-toggle" href="javascript:void(0);"><i class="search-icon fa fa-search"></i><i class="search-icon-close fa fa-close"></i></a>
+            </li>
+            <li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+          </ul>
+          <ul class="nav-right">
+            <li class="m-r-10"><a href="#"><span class="badge badge-primary">Test Execution Results - BAT</span></a></li>
+            <li class="m-r-10"><a href="#"><span class="badge badge-primary">Nov 03, 2026 09:29:02 AM</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SIDE NAVIGATION RAIL -->
+      <div class="side-nav">
+        <div class="side-nav-inner">
+          <ul class="side-nav-menu">
+            <li class="nav-item dropdown active" onclick="toggleView('test-view')">
+              <a id="nav-test" class="dropdown-toggle" href="javascript:void(0);"><span class="ico"><i class="fa fa-list"></i></span></a>
+            </li>
+            <li class="nav-item dropdown" onclick="toggleView('category-view')">
+              <a id="nav-category" class="dropdown-toggle" href="javascript:void(0);"><span class="ico"><i class="fa fa-tag"></i></span></a>
+            </li>
+            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+              <a id="nav-dashboard" class="dropdown-toggle" href="javascript:void(0);"><span class="ico"><i class="fa fa-bar-chart"></i></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT CONTAINER -->
+      <div class="vcontainer">
+        <div class="main-content">
+
+          <!-- 1. TESTS VIEW (MASTER-DETAIL) -->
+          <div class="test-wrapper row view test-view">
+            <div class="test-list">
+              <div class="test-list-tools">
+                <ul class="tools pull-left">
+                  <li><a href="javascript:void(0);"><span class="font-size-14">Tests</span></a></li>
+                </ul>
+                <ul class="tools text-right">
+                  <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+                    <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+                      <a class="dropdown-item" status="pass" href="javascript:void(0);"><span>Pass</span><span class="status success"></span></a>
+                      <a class="dropdown-item" status="fail" href="javascript:void(0);"><span>Fail</span><span class="status danger"></span></a>
+                      <div class="dropdown-divider"></div>
+                      <a status="clear" class="dropdown-item" href="javascript:void(0);"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+                    <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+                      <a class="dropdown-item" href="javascript:void(0);">SheetName_GWCC</a><a class="dropdown-item" href="javascript:void(0);">DirectDeposit</a><a class="dropdown-item" href="javascript:void(0);">PrerequisiteTest</a><a class="dropdown-item" href="javascript:void(0);">DependentTest</a><a class="dropdown-item" href="javascript:void(0);">DDSanity</a>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="test-list-wrapper scrollable">
+                <ul class="test-list-item">
+                  
+        <li class="test-item active" status="pass" test-id="10">
+          <div class="test-detail">
+            <p class="name">Online Service for People with Claims(OSPC)</p>
+            <p class="text-sm">
+              <span>092902 AM</span> / <span>01:05:459</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">Online Service for People with Claims(OSPC)</h5>
+                  <span class='badge badge-success'>Nov 03, 2026 09:29:02 AM</span>
+                  <span class='badge badge-default'>01:05:459</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="accordion" role="tablist">
+                
+          <div class="card">
+            <div class="card-header">
+              <div class="card-toolbar node-info">
+                <ul class="list-inline d-none d-sm-block">
+                  <li><span class="badge pass-bg log">Pass</span></li>
+                  <li><span class="badge badge-default">00:35:882</span></li>
+                  <li><span><i class="fa fa-paperclip"></i></span></li>
+                </ul>
+              </div>
+              <div class="card-title">
+                <a class="node" id="11" href="javascript:void(0);"><span>Add Direct Deposit Information in OSPC</span></a>
+                <div class="node-attr"><span class="badge badge-pill badge-default">SheetName_GWCC</span> <span class="badge badge-pill badge-default">DirectDeposit</span> <span class="badge badge-pill badge-default">PrerequisiteTest</span></div>
+              </div>
+            </div>
+            <div class="collapse ">
+              <div class="card-body">
+                <table class="table table-sm">
+                  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+                  <tbody>
+          <tr class="event-row">
+            <td><span class="badge log info-bg">Info</span></td>
+            <td>092902 AM</td>
+            <td>Browser: edge | Headless Mode: false</td>
+          </tr>
+        
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Before </td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Given User is on login page</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>When User submit email and password</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Then User should be able to login successfully and new page open</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Given User is on my Claim screen</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>When User clicks on Direct Deposit</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Then Verify your identity to set up and manage direct deposit</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Enter banking information and Confirm details</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Switch to New tab and Login to ClaimCenter</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Search for Claim number</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Verify the Direct Deposit is displayed in ClaimCenter</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Switch to New tab and Login to Contact Manager</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Search for the Contact using "<FirstName>" and "<LastName>"</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Verify the Direct Deposit is displayed in ContactManager</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>After </td>
+            </tr>
+          
+          <tr class="event-row">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>Scenario passed (latest attempt).</td>
+          </tr>
+        </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-header">
+              <div class="card-toolbar node-info">
+                <ul class="list-inline d-none d-sm-block">
+                  <li><span class="badge pass-bg log">Pass</span></li>
+                  <li><span class="badge badge-default">00:29:576</span></li>
+                  <li><span><i class="fa fa-paperclip"></i></span></li>
+                </ul>
+              </div>
+              <div class="card-title">
+                <a class="node" id="12" href="javascript:void(0);"><span>Edit Direct Deposit Information in OSPC</span></a>
+                <div class="node-attr"><span class="badge badge-pill badge-default">SheetName_GWCC</span> <span class="badge badge-pill badge-default">DirectDeposit</span> <span class="badge badge-pill badge-default">DependentTest</span> <span class="badge badge-pill badge-default">DDSanity</span></div>
+              </div>
+            </div>
+            <div class="collapse ">
+              <div class="card-body">
+                <table class="table table-sm">
+                  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+                  <tbody>
+          <tr class="event-row">
+            <td><span class="badge log info-bg">Info</span></td>
+            <td>092902 AM</td>
+            <td>Browser: edge | Headless Mode: false</td>
+          </tr>
+        
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Before </td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Given User is on login page</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>When User submit email and password</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Then User should be able to login successfully and new page open</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Given User is on my Claim screen</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>When User clicks on Direct Deposit</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>Then Verify your identity to set up and manage direct deposit</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Enter banking information and Confirm details</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Switch to New tab and Login to ClaimCenter</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Search for Claim number</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Verify the Direct Deposit is displayed in ClaimCenter</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Switch to New tab and Login to Contact Manager</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Search for the Contact using "<FirstName>" and "<LastName>"</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Verify the Direct Deposit is displayed in ContactManager</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log warning-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>And Remove the Direct Deposit from the Contact</td>
+            </tr>
+          
+            <tr class="event-row">
+              <td><span class="badge log info-bg">Info</span></td>
+              <td>092902 AM</td>
+              <td>After </td>
+            </tr>
+          
+          <tr class="event-row">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>Scenario passed (latest attempt).</td>
+          </tr>
+        </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        
+              </div>
+            </div>
+          </div>
+        </li>
+      
+                </ul>
+              </div>
+            </div>
+            <div class="test-content scrollable">
+              <div class="test-content-tools">
+                <ul><li><a class="back-to-test" href="javascript:void(0);"><i class="fa fa-arrow-left"></i></a></li></ul>
+              </div>
+              <div class="test-content-detail"><div class="detail-body"></div></div>
+            </div>
+          </div>
+
+          <!-- 2. CATEGORY / TAG VIEW -->
+          <div class="test-wrapper row view category-view attributes-view" style="display:none;">
+            <div class="test-list">
+              <div class="test-list-tools">
+                <ul class="tools pull-left"><li><a href="javascript:void(0);"><span class="font-size-14">Category</span></a></li></ul>
+                <ul class="tools text-right"><li><a href="javascript:void(0);"><span class="badge badge-primary">5</span></a></li></ul>
+              </div>
+              <div class="test-list-wrapper scrollable">
+                <ul class="test-list-item">
+                  
+        <li class="test-item active">
+          <div class="test-detail">
+            <span class="meta"><span class='badge log pass-bg'>2</span></span>
+            <p class="name">SheetName_GWCC</p>
+            <p class="duration text-sm">2 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>SheetName_GWCC</h4>
+              <span status="pass" class='badge log pass-bg'>2 passed</span>
+            </div>
+            <table class='table table-sm mt-4'>
+              <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th>TestName</th></tr></thead>
+              <tbody>
+          <tr class="tag-test-status" status="pass">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>
+              <a href="javascript:void(0);" class="linked" onclick="openTestFromTag(10)">Add Direct Deposit Information in OSPC</a>
+            </td>
+          </tr>
+        
+          <tr class="tag-test-status" status="pass">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>
+              <a href="javascript:void(0);" class="linked" onclick="openTestFromTag(10)">Edit Direct Deposit Information in OSPC</a>
+            </td>
+          </tr>
+        </tbody>
+            </table>
+          </div>
+        </li>
+      
+        <li class="test-item ">
+          <div class="test-detail">
+            <span class="meta"><span class='badge log pass-bg'>2</span></span>
+            <p class="name">DirectDeposit</p>
+            <p class="duration text-sm">2 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>DirectDeposit</h4>
+              <span status="pass" class='badge log pass-bg'>2 passed</span>
+            </div>
+            <table class='table table-sm mt-4'>
+              <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th>TestName</th></tr></thead>
+              <tbody>
+          <tr class="tag-test-status" status="pass">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>
+              <a href="javascript:void(0);" class="linked" onclick="openTestFromTag(10)">Add Direct Deposit Information in OSPC</a>
+            </td>
+          </tr>
+        
+          <tr class="tag-test-status" status="pass">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>
+              <a href="javascript:void(0);" class="linked" onclick="openTestFromTag(10)">Edit Direct Deposit Information in OSPC</a>
+            </td>
+          </tr>
+        </tbody>
+            </table>
+          </div>
+        </li>
+      
+        <li class="test-item ">
+          <div class="test-detail">
+            <span class="meta"><span class='badge log pass-bg'>1</span></span>
+            <p class="name">PrerequisiteTest</p>
+            <p class="duration text-sm">1 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>PrerequisiteTest</h4>
+              <span status="pass" class='badge log pass-bg'>1 passed</span>
+            </div>
+            <table class='table table-sm mt-4'>
+              <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th>TestName</th></tr></thead>
+              <tbody>
+          <tr class="tag-test-status" status="pass">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>
+              <a href="javascript:void(0);" class="linked" onclick="openTestFromTag(10)">Add Direct Deposit Information in OSPC</a>
+            </td>
+          </tr>
+        </tbody>
+            </table>
+          </div>
+        </li>
+      
+        <li class="test-item ">
+          <div class="test-detail">
+            <span class="meta"><span class='badge log pass-bg'>1</span></span>
+            <p class="name">DependentTest</p>
+            <p class="duration text-sm">1 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>DependentTest</h4>
+              <span status="pass" class='badge log pass-bg'>1 passed</span>
+            </div>
+            <table class='table table-sm mt-4'>
+              <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th>TestName</th></tr></thead>
+              <tbody>
+          <tr class="tag-test-status" status="pass">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>
+              <a href="javascript:void(0);" class="linked" onclick="openTestFromTag(10)">Edit Direct Deposit Information in OSPC</a>
+            </td>
+          </tr>
+        </tbody>
+            </table>
+          </div>
+        </li>
+      
+        <li class="test-item ">
+          <div class="test-detail">
+            <span class="meta"><span class='badge log pass-bg'>1</span></span>
+            <p class="name">DDSanity</p>
+            <p class="duration text-sm">1 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>DDSanity</h4>
+              <span status="pass" class='badge log pass-bg'>1 passed</span>
+            </div>
+            <table class='table table-sm mt-4'>
+              <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th>TestName</th></tr></thead>
+              <tbody>
+          <tr class="tag-test-status" status="pass">
+            <td><span class="badge log pass-bg">Pass</span></td>
+            <td>092902 AM</td>
+            <td>
+              <a href="javascript:void(0);" class="linked" onclick="openTestFromTag(10)">Edit Direct Deposit Information in OSPC</a>
+            </td>
+          </tr>
+        </tbody>
+            </table>
+          </div>
+        </li>
+      
+                </ul>
+              </div>
+            </div>
+            <div class="test-content scrollable">
+              <div class="test-content-tools">
+                <ul><li><a class="back-to-test" href="javascript:void(0);"><i class="fa fa-arrow-left"></i></a></li></ul>
+              </div>
+              <div class="test-content-detail"><div class="detail-body"></div></div>
+            </div>
+          </div>
+
+          <!-- 3. DASHBOARD VIEW -->
+          <div class="container-fluid p-4 view dashboard-view" style="display:none;">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card"><div class="card-body"><p class="m-b-0">Started</p><h3>Nov 03, 2026 09:29:02 AM</h3></div></div>
+              </div>
+              <div class="col-md-3">
+                <div class="card"><div class="card-body"><p class="m-b-0">Ended</p><h3>Nov 03, 2026 09:29:02 AM</h3></div></div>
+              </div>
+              <div class="col-md-3">
+                <div class="card"><div class="card-body"><p class="m-b-0 text-pass">Tests Passed</p><h3>1</h3></div></div>
+              </div>
+              <div class="col-md-3">
+                <div class="card"><div class="card-body"><p class="m-b-0 text-fail">Tests Failed</p><h3>0</h3></div></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header"><h6 class="card-title">Tests</h6></div>
+                  <div class="card-body"><canvas id="parent-analysis" width="115" height="90"></canvas></div>
+                  <div class="card-footer">
+                    <div><small data-tooltip="100%"><b>1</b> tests passed</small></div>
+                    <div><small data-tooltip="0%"><b>0</b> tests failed</small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header"><h6 class="card-title">Steps</h6></div>
+                  <div class="card-body"><canvas id="child-analysis" width="115" height="90"></canvas></div>
+                  <div class="card-footer">
+                    <div><small data-tooltip="100%"><b>2</b> steps passed</small></div>
+                    <div><small data-tooltip="0%"><b>0</b> steps failed</small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header"><h6 class="card-title">Log events</h6></div>
+                  <div class="card-body"><canvas id="events-analysis" width="115" height="90"></canvas></div>
+                  <div class="card-footer">
+                    <div><small data-tooltip="71%"><b>22</b> events passed</small></div>
+                    <div><small data-tooltip="0%"><b>0</b> events failed</small></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card"><div class="card-header"><p>Timeline</p></div><div class="card-body pt-0"><canvas id="timeline" height="120"></canvas></div></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-12 category-container">
+                <div class="card">
+                  <div class="card-header"><p>Tags</p></div>
+                  <div class="card-body pb-0 pt-0">
+                    <table class="table table-sm table-bordered">
+                      <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+                      <tbody>
+                        <tr><td>SheetName_GWCC</td><td>2</td><td>0</td><td>0</td><td>0</td><td>100%</td></tr><tr><td>DirectDeposit</td><td>2</td><td>0</td><td>0</td><td>0</td><td>100%</td></tr><tr><td>PrerequisiteTest</td><td>1</td><td>0</td><td>0</td><td>0</td><td>100%</td></tr><tr><td>DependentTest</td><td>1</td><td>0</td><td>0</td><td>0</td><td>100%</td></tr><tr><td>DDSanity</td><td>1</td><td>0</td><td>0</td><td>0</td><td>100%</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12 sysenv-container">
+                <div class="card">
+                  <div class="card-header"><p>System/Environment</p></div>
+                  <div class="card-body pb-0 pt-0">
+                    <table class="table table-sm table-bordered">
+                      <thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+                      <tbody>
+                        <tr><td>Environment</td><td>BAT</td></tr>
+                        <tr><td>Browser</td><td>EDGE (Headless: false)</td></tr>
+                        <tr><td>Platform</td><td>Windows 10/11</td></tr>
+                        <tr><td>Execution Time</td><td>Nov 03, 2026 09:29:02 AM</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+var timeline = {
+  "Online Service for People with Claims(OSPC)": 65
+};
+var statusGroup = {
+  parentCount: 1,
+  passParent: 1,
+  failParent: 0,
+  warningParent: 0,
+  skipParent: 0,
+  childCount: 2,
+  passChild: 2,
+  failChild: 0,
+  warningChild: 0,
+  skipChild: 0,
+  infoChild: 0,
+  grandChildCount: 31,
+  passGrandChild: 22,
+  failGrandChild: 0,
+  warningGrandChild: 0,
+  skipGrandChild: 9,
+  infoGrandChild: 0,
+  eventsCount: 31,
+  passEvents: 22,
+  failEvents: 0,
+  warningEvents: 0,
+  skipEvents: 9,
+  infoEvents: 22
+};
+
+// Extent Spark Interaction Scripts
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Initial Master-Detail Render
+  function renderDetail(viewClass) {
+    var activeItem = document.querySelector(viewClass + " .test-list-item .test-item.active");
+    if (!activeItem) {
+      activeItem = document.querySelector(viewClass + " .test-list-item .test-item");
+      if (activeItem) activeItem.classList.add("active");
+    }
+    if (activeItem) {
+      var contents = activeItem.querySelector(".test-contents");
+      var detailTarget = document.querySelector(viewClass + " .test-content-detail .detail-body");
+      if (contents && detailTarget) {
+        detailTarget.innerHTML = contents.innerHTML;
+        bindDetailEvents(viewClass);
+      }
+    }
+  }
+
+  function bindMasterClick(viewClass) {
+    var items = document.querySelectorAll(viewClass + " .test-list-item .test-item");
+    items.forEach(function (item) {
+      item.addEventListener("click", function () {
+        items.forEach(function (i) { i.classList.remove("active"); });
+        item.classList.add("active");
+        renderDetail(viewClass);
+      });
+    });
+  }
+
+  // 2. Expand / Collapse & Accordion Controls
+  function bindDetailEvents(viewClass) {
+    var detail = document.querySelector(viewClass + " .test-content-detail");
+    if (!detail) return;
+
+    // Toggle single card on header click
+    detail.querySelectorAll(".card-header").forEach(function (header) {
+      header.onclick = function () {
+        var collapse = header.nextElementSibling;
+        if (collapse) {
+          collapse.classList.toggle("show");
+        }
+      };
+    });
+
+    // Expand all button (et)
+    var expandAllBtn = detail.querySelector(".et");
+    if (expandAllBtn) {
+      expandAllBtn.onclick = function (e) {
+        e.stopPropagation();
+        detail.querySelectorAll(".accordion .collapse").forEach(function (c) {
+          c.classList.add("show");
+        });
+      };
+    }
+
+    // Collapse all button (ct)
+    var collapseAllBtn = detail.querySelector(".ct");
+    if (collapseAllBtn) {
+      collapseAllBtn.onclick = function (e) {
+        e.stopPropagation();
+        detail.querySelectorAll(".accordion .collapse").forEach(function (c) {
+          c.classList.remove("show");
+        });
+      };
+    }
+  }
+
+  bindMasterClick(".test-view");
+  bindMasterClick(".category-view");
+  renderDetail(".test-view");
+});
+
+// View switching function
+function toggleView(viewName) {
+  document.querySelectorAll(".side-nav-menu li").forEach(function (li) { li.classList.remove("active"); });
+  document.querySelectorAll(".view").forEach(function (v) { v.style.display = "none"; });
+
+  if (viewName === "test-view") {
+    document.querySelector("#nav-test").parentElement.classList.add("active");
+    var tv = document.querySelector(".test-view");
+    tv.style.display = "flex";
+    var detail = tv.querySelector(".test-content-detail .detail-body");
+    if (!detail || detail.innerHTML.trim() === "") {
+      var active = tv.querySelector(".test-list-item .test-item.active") || tv.querySelector(".test-list-item .test-item");
+      if (active) {
+        detail.innerHTML = active.querySelector(".test-contents").innerHTML;
+      }
+    }
+  } else if (viewName === "category-view") {
+    document.querySelector("#nav-category").parentElement.classList.add("active");
+    var cv = document.querySelector(".category-view");
+    cv.style.display = "flex";
+    var cDetail = cv.querySelector(".test-content-detail .detail-body");
+    if (!cDetail || cDetail.innerHTML.trim() === "") {
+      var cActive = cv.querySelector(".test-list-item .test-item.active") || cv.querySelector(".test-list-item .test-item");
+      if (cActive) {
+        cDetail.innerHTML = cActive.querySelector(".test-contents").innerHTML;
+      }
+    }
+  } else if (viewName === "dashboard-view") {
+    document.querySelector("#nav-dashboard").parentElement.classList.add("active");
+    document.querySelector(".dashboard-view").style.display = "block";
+  }
+}
+
+function openTestFromTag(testId) {
+  toggleView("test-view");
+  var target = document.querySelector(".test-view .test-item[test-id='" + testId + "']");
+  if (target) {
+    target.click();
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+</body>
+</html>
